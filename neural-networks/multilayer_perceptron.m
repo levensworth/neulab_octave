@@ -126,16 +126,13 @@ function NeuralNet = fit(x_set, y_set)
     global BATCH;
     global NeuralNet;
     
-    global errors;
-    global etas;
-    
     % Adam
     NeuralNet.adam_weight_first_momentum = 0;
     NeuralNet.adam_weight_second_momentum = 0;
     NeuralNet.adam_bias_first_momentum = 0;
     NeuralNet.adam_bias_second_momentum = 0;
 
- #   NeuralNet.epoch = 1;
+    NeuralNet.epoch = 1;
     epoch = NeuralNet.epoch;
     % Momentum
     NeuralNet.prev_derivatives = create_arrays(NeuralNet.layers, ZERO);
@@ -144,8 +141,8 @@ function NeuralNet = fit(x_set, y_set)
     NeuralNet.adaptive_eta_error = [];
 
     # For runtime plots
-#    errors = [];
-#    etas = [NeuralNet.eta];
+    errors = [];
+    etas = [NeuralNet.eta];
 
     do 
         if(mod(epoch, 25 ) == 0)

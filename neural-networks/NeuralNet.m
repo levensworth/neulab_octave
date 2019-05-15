@@ -19,12 +19,6 @@ NetConfig.momentum = 0.9;
 NetConfig.weight_decay = 0.0;
 NetConfig.max_epochs = 200;
 NetConfig.learning = INCREMENTAL;
-#educational purposes
-NetConfig.epoch = 1;
-global errors
-global etas ;
-errors = [];
-etas = [NetConfig.eta];
 
 % Eta optimization
 NetConfig.optimization = SGD;
